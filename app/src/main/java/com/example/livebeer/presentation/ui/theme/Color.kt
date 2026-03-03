@@ -1,4 +1,4 @@
-package com.example.livebeer.ui.theme
+package com.example.livebeer.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
