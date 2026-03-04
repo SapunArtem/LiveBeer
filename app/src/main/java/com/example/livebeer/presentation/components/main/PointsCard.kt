@@ -29,7 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.livebeer.R
-import com.example.livebeer.presentation.ui.theme.BtnHelpCol
+import com.example.livebeer.presentation.ui.theme.BtnCol
 import com.example.livebeer.presentation.ui.theme.CardBlackCol
 import com.example.livebeer.presentation.ui.theme.SfUProDisplayHeavy
 import com.example.livebeer.presentation.ui.theme.SfUProDisplaySemibold
@@ -100,7 +100,7 @@ fun PointsCard(){
                     .align(Alignment.TopEnd)
                     .offset(x = 6.dp, y = (-6).dp)
                     .clip(CircleShape)
-                    .background(BtnHelpCol)
+                    .background(BtnCol)
                     .border(
                         width = 4.dp,
                         color = Color.White,

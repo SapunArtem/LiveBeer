@@ -10,7 +10,9 @@ import androidx.compose.ui.unit.dp
 import com.example.livebeer.R
 
 @Composable
-fun StockList(){
+fun StockList(
+    onStockClick: (String, String, Int) -> Unit
+){
     val stockItem = listOf(
         StockItem(
             title = "Новые сорта крафта уже в наличии в магазинах",
@@ -50,7 +52,10 @@ fun StockList(){
             StockCard(
                 title = item.title,
                 date = item.date,
-                imageRes = item.imageRes
+                imageRes = item.imageRes,
+                onClick = {
+                    onStockClick(item.title, item.date, item.imageRes)
+                }
             )
         }
     }

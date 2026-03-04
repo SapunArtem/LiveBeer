@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.livebeer.presentation.ui.theme.BtnHelpCol
+import com.example.livebeer.presentation.ui.theme.BtnCol
 import com.example.livebeer.presentation.ui.theme.CardBlackCol
 import com.example.livebeer.presentation.ui.theme.SfUProDisplaySemibold
 import com.example.livebeer.presentation.ui.theme.SfUiDisplayRegular
@@ -28,7 +28,7 @@ fun NewsCard(
 
     Card(
         colors = CardDefaults.cardColors(
-            containerColor = BtnHelpCol
+            containerColor = BtnCol
         ),
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
