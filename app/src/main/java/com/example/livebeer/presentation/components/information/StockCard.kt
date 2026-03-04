@@ -1,6 +1,7 @@
 package com.example.livebeer.presentation.components.information
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,7 +27,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.livebeer.presentation.ui.theme.BtnHelpCol
+import com.example.livebeer.presentation.ui.theme.BtnCol
 import com.example.livebeer.presentation.ui.theme.CardBlackCol
 import com.example.livebeer.presentation.ui.theme.SfUProDisplaySemibold
 import com.example.livebeer.presentation.ui.theme.SfUiDisplayRegular
@@ -35,17 +36,19 @@ import com.example.livebeer.presentation.ui.theme.SfUiDisplayRegular
 fun StockCard(
     title: String,
     date: String,
-    imageRes: Int
+    imageRes: Int,
+    onClick: () -> Unit
 ){
 
     Card(
         colors = CardDefaults.cardColors(
-            containerColor = BtnHelpCol
+            containerColor = BtnCol
         ),
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
             .height(96.dp)
             .fillMaxWidth()
+            .clickable{onClick()}
 
     ) {
         Row(

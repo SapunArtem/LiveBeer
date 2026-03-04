@@ -22,7 +22,9 @@ import com.example.livebeer.presentation.ui.theme.SfUiDisplaySemibold
 import com.example.livebeer.presentation.ui.theme.TextCol
 
 @Composable
-fun InformationScreen(modifier: Modifier = Modifier){
+fun InformationScreen(
+    onStockClick: (String, String, Int) -> Unit
+){
 
     var selectedTab by remember { mutableStateOf(0) }
     val tabs = listOf("Акции", "Новости")
@@ -52,7 +54,9 @@ fun InformationScreen(modifier: Modifier = Modifier){
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            StockList()
+            StockList(
+                onStockClick = onStockClick
+            )
 
         }
     }

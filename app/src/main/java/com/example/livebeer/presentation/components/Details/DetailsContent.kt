@@ -35,7 +35,12 @@ import com.example.livebeer.presentation.ui.theme.SfUiDisplaySemibold
 import com.example.livebeer.presentation.ui.theme.TextCol
 
 @Composable
-fun DetailsContent() {
+fun DetailsContent(
+    title: String,
+    date: String,
+    imageRes: Int,
+    onBackClick: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -48,7 +53,7 @@ fun DetailsContent() {
         Row(
             modifier = Modifier
                 .padding(top = 24.dp)
-                .clickable {},
+                .clickable {onBackClick()},
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             Image(
@@ -72,7 +77,7 @@ fun DetailsContent() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Новые сорта крафта уже в наличии в магазинах",
+            text = title,
             fontFamily = SfUiDisplaySemibold,
             fontSize = 32.sp,
             fontWeight = FontWeight(600),
@@ -125,7 +130,7 @@ fun DetailsContent() {
                 contentAlignment = Alignment.Center
             ){
                 Text(
-                    text = "20.01.2022",
+                    text = date,
                     fontFamily = SfUiDisplaySemibold,
                     fontSize = 12.sp,
                     fontWeight = FontWeight(600),
@@ -144,7 +149,7 @@ fun DetailsContent() {
 
         ){
             Image(
-                painter = painterResource(R.drawable.stock_beer1),
+                painter = painterResource(id = imageRes),
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()

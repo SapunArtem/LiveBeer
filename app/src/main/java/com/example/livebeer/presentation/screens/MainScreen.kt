@@ -36,7 +36,7 @@ import com.example.livebeer.presentation.ui.theme.SfUiDisplaySemibold
 import com.example.livebeer.presentation.ui.theme.TextCol
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier){
+fun MainScreen(){
 
 
         ScreenWithBackground {
