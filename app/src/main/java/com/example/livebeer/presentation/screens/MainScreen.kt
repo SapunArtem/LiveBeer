@@ -1,6 +1,5 @@
 package com.example.livebeer.presentation.screens
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,12 +22,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.livebeer.R
+import com.example.livebeer.presentation.components.background.ScreenWithBackground
 import com.example.livebeer.presentation.components.main.NewsList
 import com.example.livebeer.presentation.components.main.PointsCard
 import com.example.livebeer.presentation.components.main.ProgressCard
@@ -39,26 +38,12 @@ import com.example.livebeer.presentation.ui.theme.TextCol
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-    ){
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(204.dp)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.frame),
-                contentScale = ContentScale.Crop,
-                contentDescription = "Frame",
-                modifier = Modifier.fillMaxSize()
-            )
+
+        ScreenWithBackground {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.Center
+                    .padding(horizontal = 16.dp)
             ) {
                 Row(
                     modifier = Modifier
@@ -129,48 +114,50 @@ fun MainScreen(modifier: Modifier = Modifier){
                         )
                     }
                 }
+                ProgressCard()
+
+                PointsCard()
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Будь в курсе",
+                        fontFamily = SfUiDisplaySemibold,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight(600),
+                        color = TextCol
+                    )
+
+                    IconButton(
+                        onClick = {}
+                    ){
+                        Icon(
+                            painter = painterResource(id = R.drawable.arrow_left),
+                            contentDescription = "ArrowLeft",
+                            tint = Color.Black,
+                            modifier = Modifier.size(24.dp)
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                NewsList()
 
             }
         }
 
-
-        ProgressCard()
-
-        PointsCard()
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = "Будь в курсе",
-                fontFamily = SfUiDisplaySemibold,
-                fontSize = 24.sp,
-                fontWeight = FontWeight(600),
-                color = TextCol
-            )
-
-            IconButton(
-                onClick = {}
-            ){
-                Icon(
-                    painter = painterResource(id = R.drawable.arrow_left),
-                    contentDescription = "ArrowLeft",
-                    tint = Color.Black,
-                    modifier = Modifier.size(24.dp)
-                )
-            }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
 
-        NewsList()
 
-    }
 
-    }
+
+
+
