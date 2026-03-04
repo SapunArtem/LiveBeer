@@ -39,7 +39,6 @@ fun ProgressCard(){
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
             .height(152.dp)
-            .padding(horizontal = 16.dp)
     ) {
         Column(
             modifier = Modifier

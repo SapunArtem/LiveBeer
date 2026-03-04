@@ -43,7 +43,6 @@ fun PointsCard(){
         modifier = Modifier
             .height(134.dp)
             .fillMaxWidth()
-            .padding(horizontal = 16.dp)
     ) {
         Card(
             colors = CardDefaults.cardColors(
