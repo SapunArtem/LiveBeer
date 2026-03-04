@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.livebeer.presentation.screens.InformationScreen
+import com.example.livebeer.presentation.screens.DetailsScreen
 import com.example.livebeer.presentation.ui.theme.LiveBeerTheme
 
 class LiveBeer : ComponentActivity() {
@@ -18,7 +18,7 @@ class LiveBeer : ComponentActivity() {
         setContent {
             LiveBeerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    InformationScreen(
+                    DetailsScreen(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
